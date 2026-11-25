@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Login | Ponto de Vista</title>
+  <link rel="icon" href="img/logo.png">
+  <link rel="stylesheet" href="css/login.css">
+</head>
+<body>
+  <main>
+    <form id="form-login" novalidate>
+      <img src="img/logo.png" alt="" class="logo" width="48" height="48">
+      <h1>Ponto de Vista</h1>
+      <p class="subtitulo">Entre para acessar o portal de notícias</p>
+
+      <label for="usuario">Usuário</label>
+      <div class="campo">
+        <svg aria-hidden="true" viewBox="0 0 24 24"><path d="M12 12a5 5 0 1 0 0-10 5 5 0 0 0 0 10zm0 2c-4.4 0-8 2.2-8 5v3h16v-3c0-2.8-3.6-5-8-5z"/></svg>
+        <input type="text" id="usuario" name="usuario" autocomplete="username" required>
+      </div>
+
+      <label for="senha">Senha</label>
+      <div class="campo">
+        <svg aria-hidden="true" viewBox="0 0 24 24"><path d="M17 9V7a5 5 0 0 0-10 0v2H5v13h14V9h-2zm-8-2a3 3 0 0 1 6 0v2H9V7z"/></svg>
+        <input type="password" id="senha" name="senha" autocomplete="current-password" required>
+      </div>
+
+      <p id="mensagem-erro" class="erro" role="alert" aria-live="polite"></p>
+
+      <button type="submit">Entrar</button>
+      <p class="dica">Acesso de demonstração: usuário <code>admin</code>, senha <code>admin</code></p>
+    </form>
+  </main>
+
+  <script src="js/login.js"></script>
+</body>
+</html>

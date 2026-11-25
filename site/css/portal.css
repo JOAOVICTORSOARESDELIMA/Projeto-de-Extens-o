@@ -1,0 +1,310 @@
+/* ---- Tema ---------------------------------------------------------------- */
+:root {
+  --vermelho: #bb0505;
+  --escuro: #21272b;
+  --cinza: #e6e4e4;
+  --largura: 1200px;
+  --serifada: "Times New Roman", Times, serif;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 90px; /* não deixa o topo fixo cobrir o título da seção */
+}
+
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  color: var(--escuro);
+  background: var(--cinza);
+}
+
+img {
+  max-width: 100%;
+  display: block;
+}
+
+/* ---- Topo ------------------------------------------------------------------ */
+.topo {
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  max-width: var(--largura);
+  margin: 0 auto;
+  padding: 1rem 2rem;
+  color: #fff;
+  background: var(--escuro);
+}
+
+.marca {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  color: #fff;
+  text-decoration: none;
+  font-style: italic;
+}
+
+
+.marca small {
+  display: block;
+  font-style: normal;
+}
+
+.marca strong {
+  font-family: var(--serifada);
+  font-size: 1.5rem;
+  font-weight: normal;
+}
+
+.menu ul {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+  list-style: none;
+}
+
+.menu li + li {
+  padding-left: 1.5rem;
+  border-left: 3px solid var(--vermelho);
+}
+
+.menu a,
+.sair {
+  color: #fff;
+  font: inherit;
+  text-decoration: none;
+  text-transform: uppercase;
+  font-size: 0.9rem;
+}
+
+.menu a:hover,
+.menu a:focus-visible,
+.sair:hover {
+  color: #ff5a5a;
+}
+
+.sair {
+  padding: 0.3rem 0.8rem;
+  background: transparent;
+  border: 1px solid #fff;
+  border-radius: 3px;
+  cursor: pointer;
+}
+
+.botao-menu {
+  display: none;
+  flex-direction: column;
+  gap: 5px;
+  padding: 8px;
+  background: none;
+  border: 0;
+  cursor: pointer;
+}
+
+.botao-menu span {
+  width: 26px;
+  height: 3px;
+  background: #fff;
+  border-radius: 2px;
+}
+
+/* ---- Conteúdo ------------------------------------------------------------- */
+main {
+  max-width: var(--largura);
+  margin: 0 auto;
+  padding-bottom: 3rem;
+  background: #fff;
+}
+
+.destaque {
+  display: flex;
+  align-items: flex-end;
+  justify-content: flex-end;
+  min-height: 450px;
+  padding: 2rem;
+  background: url("../img/capa.jpg") center / cover no-repeat;
+}
+
+.caixa {
+  max-width: 380px;
+  padding: 2rem;
+  color: #fff;
+  background: var(--escuro);
+  border-radius: 3px;
+}
+
+.caixa h2 {
+  margin-bottom: 1.5rem;
+  font-family: var(--serifada);
+  font-size: 1.8rem;
+  font-weight: normal;
+  font-style: italic;
+}
+
+.caixa p {
+  font-size: 1.1rem;
+}
+
+.telefone {
+  display: block;
+  margin-top: 0.5rem;
+  color: #ff5a5a;
+  font-weight: bold;
+}
+
+.colunas {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 2rem;
+  padding: 2rem;
+}
+
+.faixa {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  margin-bottom: 1.25rem;
+  padding: 0.4rem 0.75rem;
+  color: #fff;
+  background: var(--vermelho);
+  font-family: var(--serifada);
+  font-weight: normal;
+  text-transform: uppercase;
+}
+
+
+.noticia + .noticia {
+  margin-top: 2.5rem;
+}
+
+.noticia h3 {
+  margin-bottom: 0.75rem;
+  font-style: italic;
+  font-weight: normal;
+  font-size: 1.2rem;
+}
+
+.noticia h3 a {
+  color: var(--escuro);
+}
+
+.noticia h3 a:hover,
+.noticia h3 a:focus-visible {
+  color: var(--vermelho);
+}
+
+.noticia p {
+  font-family: var(--serifada);
+  font-size: 1rem;
+  line-height: 1.5;
+}
+
+.noticia .fonte {
+  margin: 0.5rem 0 1rem;
+  font-family: inherit;
+  font-size: 0.8rem;
+  color: #777;
+}
+
+.galeria {
+  display: grid;
+  gap: 0.5rem;
+}
+
+.galeria-2 {
+  grid-template-columns: 1fr 1fr;
+}
+
+.galeria img {
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  object-fit: cover;
+}
+
+/* ---- Rodapé --------------------------------------------------------------- */
+.rodape {
+  max-width: var(--largura);
+  margin: 0 auto 2rem;
+  padding: 1.5rem 2rem;
+  font-size: 0.9rem;
+  text-align: center;
+  background: #f4f4f4;
+  border-top: 4px solid var(--vermelho);
+}
+
+.rodape p + p {
+  margin-top: 0.5rem;
+  color: #666;
+}
+
+/* ---- Celular e tablet ----------------------------------------------------- */
+@media (max-width: 900px) {
+  .colunas {
+    grid-template-columns: 1fr;
+  }
+
+  .destaque {
+    justify-content: center;
+    min-height: 360px;
+  }
+}
+
+@media (max-width: 720px) {
+  .topo {
+    padding: 0.75rem 1rem;
+  }
+
+  .botao-menu {
+    display: flex;
+  }
+
+  .menu {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    background: var(--escuro);
+  }
+
+  .menu.aberto {
+    display: block;
+  }
+
+  .menu ul {
+    flex-direction: column;
+    gap: 0;
+    padding: 0.5rem 1rem 1rem;
+  }
+
+  .menu li,
+  .menu li + li {
+    width: 100%;
+    padding: 0.75rem 0;
+    border-left: 0;
+    border-bottom: 1px solid #3a4248;
+    text-align: center;
+  }
+
+  .colunas {
+    padding: 1.25rem;
+  }
+
+  .galeria-2 {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+}

@@ -1,0 +1,131 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  display: grid;
+  place-items: center;
+  min-height: 100vh;
+  padding: 1rem;
+  font-family: Arial, Helvetica, sans-serif;
+  color: #fff;
+  background: linear-gradient(135deg, #3b4068, #cb5469, #53acc3, #8d3456, #4291b4);
+  background-size: 300% 300%;
+  animation: fundo 15s ease infinite;
+}
+
+form {
+  width: min(100%, 340px);
+  padding: 2rem;
+  text-align: center;
+  background: rgba(0, 0, 0, 0.6);
+  border-radius: 8px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+.logo {
+  display: block;
+  margin: 0 auto;
+}
+
+h1 {
+  margin: 0.5rem 0 0.25rem;
+  font-family: "Times New Roman", Times, serif;
+  font-style: italic;
+  font-size: 1.8rem;
+}
+
+.subtitulo {
+  margin-bottom: 1.5rem;
+  font-size: 0.9rem;
+  opacity: 0.8;
+}
+
+label {
+  display: block;
+  margin-bottom: 0.35rem;
+  font-size: 0.85rem;
+  text-align: left;
+}
+
+.campo {
+  position: relative;
+  margin-bottom: 1rem;
+}
+
+.campo svg {
+  position: absolute;
+  top: 50%;
+  left: 12px;
+  width: 18px;
+  height: 18px;
+  fill: rgba(255, 255, 255, 0.7);
+  transform: translateY(-50%);
+}
+
+.campo input {
+  width: 100%;
+  padding: 12px 12px 12px 40px;
+  font-size: 1rem;
+  color: #fff;
+  background: rgba(33, 39, 43, 0.8);
+  border: 1px solid transparent;
+  border-radius: 4px;
+}
+
+.campo input:focus {
+  outline: none;
+  border-color: #cb5469;
+  box-shadow: 0 0 6px #cb5469;
+}
+
+.erro {
+  min-height: 1.2em;
+  margin-bottom: 0.75rem;
+  font-size: 0.9rem;
+  color: #ffb3c0;
+}
+
+.com-erro .campo input {
+  border-color: #ff6b81;
+}
+
+button {
+  width: 100%;
+  padding: 12px;
+  font-size: 1rem;
+  color: #fff;
+  background: #cb5469;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+button:hover,
+button:focus-visible {
+  background: #8d3456;
+}
+
+.dica {
+  margin-top: 1.25rem;
+  font-size: 0.75rem;
+  opacity: 0.7;
+}
+
+code {
+  padding: 0 4px;
+  background: rgba(255, 255, 255, 0.15);
+  border-radius: 3px;
+}
+
+@keyframes fundo {
+  0%, 100% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  body { animation: none; }
+}

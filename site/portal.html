@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Ponto de Vista | Portal de Notícias</title>
+  <link rel="icon" href="img/logo.png">
+  <link rel="stylesheet" href="css/portal.css">
+  <!-- Protege a página: sem login, volta para a tela de entrada -->
+  <script>
+    if (sessionStorage.getItem("pontoDeVista.logado") !== "sim") location.replace("index.html");
+  </script>
+</head>
+<body>
+  <header class="topo">
+    <a href="#inicio" class="marca">
+      <img src="img/logo.png" alt="" width="41" height="41">
+      <span>
+        <small>Portal Online</small>
+        <strong>PONTO DE VISTA</strong>
+      </span>
+    </a>
+
+    <button class="botao-menu" aria-expanded="false" aria-controls="menu" aria-label="Abrir menu">
+      <span></span><span></span><span></span>
+    </button>
+
+    <nav id="menu" class="menu">
+      <ul>
+        <li><a href="#ultima-hora">Última hora</a></li>
+        <li><a href="#em-alta">Em alta</a></li>
+        <li><a href="#contato">Contato</a></li>
+        <li><a href="https://www.instagram.com/" target="_blank" rel="noopener noreferrer">@pontodevista</a></li>
+        <li><button type="button" id="sair" class="sair">Sair</button></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main id="inicio">
+    <section class="destaque">
+      <div class="caixa">
+        <h2>Fique por dentro do que está acontecendo neste exato momento.</h2>
+        <p>Entre em contato pelo número abaixo e receba conteúdos em primeira mão:
+          <span class="telefone">(83) 0000-0000</span></p>
+      </div>
+    </section>
+
+    <div class="colunas">
+      <section id="ultima-hora" class="bloco" aria-labelledby="titulo-ultima-hora">
+        <h2 id="titulo-ultima-hora" class="faixa"><img src="img/logo.png" alt="" width="28" height="28"> Última hora</h2>
+        <div class="lista-noticias" data-categoria="ultimaHora"></div>
+      </section>
+
+      <section id="em-alta" class="bloco" aria-labelledby="titulo-em-alta">
+        <h2 id="titulo-em-alta" class="faixa"><img src="img/logo.png" alt="" width="28" height="28"> Em alta</h2>
+        <div class="lista-noticias" data-categoria="emAlta"></div>
+      </section>
+    </div>
+  </main>
+
+  <footer id="contato" class="rodape">
+    <p>Ponto de Vista: portal de notícias criado como projeto de extensão (UNIESP, 2024.2).</p>
+    <p>© 2024 Ponto de Vista. As notícias resumidas aqui pertencem aos veículos indicados em cada link.</p>
+  </footer>
+
+  <script src="js/noticias.js"></script>
+  <script src="js/portal.js"></script>
+</body>
+</html>
